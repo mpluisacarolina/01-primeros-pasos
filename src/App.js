@@ -1,25 +1,42 @@
 import logo from './logo.svg';
 import './App.css';
+import { MiComponente } from './MiComponente';
+import { SegundoComponente } from './SegundoComponente';
+import { TercerComponente } from './TercerComponente';
+import { EventosComponente } from './EventosComponente';
 
 function App() {
+  const ficha_medica = {
+    altura: "170cm",
+    grupo: "ORH+",
+    estado: "Bueno",
+    alergias: "Ibuprofeno"
+  }
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Bienvenido al Master en React!!
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+   
+      <div className = 'componentes'>
+        <hr/>
+        <EventosComponente/>
+        <hr/>
+        <TercerComponente
+          nombre = "Luisa"
+          apellido = "Marín"
+          ficha = {ficha_medica}
+        />
+        <hr/>
+        <SegundoComponente/>
+        <hr/>
+        <MiComponente/>       
+        <hr/>
+      </div>     
       </header>
     </div>
   );
 }
-
 export default App;
